@@ -1,114 +1,141 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta property="og:title" content="오늘의 나를 소개하는 TIL 페이지" />
+    <meta property="og:description" content="프로필, 갤러리, 인생 작품, 그리고 오늘 배운 내용을 기록한 자기소개 페이지입니다." />
+    <meta property="og:image" content="./images/og-cover.svg" />
 
-    <!-- TODO: Open Graph 메타 태그를 설정하세요 -->
-    <!-- <meta property="og:title" content="페이지 제목" /> -->
-    <!-- <meta property="og:description" content="페이지 설명" /> -->
-    <!-- <meta property="og:image" content="./images/thumbnail.jpg" /> -->
-
-    <title>Today I Learn</title>
+    <title>오늘의 나를 소개하는 TIL 페이지</title>
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <!-- 상단 내비게이션 -->
-    <nav class="top-nav">
-      <span class="nav-logo">My Page</span>
-      <ul class="nav-links">
-        <li><a href="#about">자기소개</a></li>
-        <li><a href="#gallery">갤러리</a></li>
-        <li><a href="#works">인생 작품</a></li>
-        <li><a href="#til">TIL</a></li>
-      </ul>
-    </nav>
-
-    <!-- 프로필 히어로 -->
-    <section class="hero" id="about">
-      <div class="profile-card">
-        <div class="profile-image">
-          <!-- TODO: 프로필 이미지를 넣어주세요 -->
-          <!-- <img src="./images/profile.jpg" alt="프로필 사진" /> -->
-        </div>
-        <div class="profile-info">
-          <h1>닉네임</h1>
-          <p class="tagline">한 줄 소개를 작성해주세요.</p>
-        </div>
-      </div>
-    </section>
+    <header>
+      <nav class="top-nav" aria-label="페이지 섹션 이동">
+        <span class="nav-logo">Today I Learn</span>
+        <ul class="nav-links">
+          <li><a href="#about">프로필</a></li>
+          <li><a href="#info">기본 정보</a></li>
+          <li><a href="#gallery">갤러리</a></li>
+          <li><a href="#works">인생 작품</a></li>
+          <li><a href="#til">TIL</a></li>
+        </ul>
+        <button class="nav-action" id="scroll-to-til" type="button">오늘 배운 것 쓰기</button>
+      </nav>
+    </header>
 
     <main>
-      <!-- 자기소개 -->
-      <section class="content-section">
-        <h2>자기소개</h2>
-        <p>자기소개를 작성해주세요.</p>
-        <!-- TODO: 소개 글 안에 블로그, GitHub 등 관련 링크를 <a> 태그로 연결하세요 -->
+      <section class="hero" id="about">
+        <div class="profile-card">
+          <div class="profile-image">
+            <img src="./images/profile.png" alt="바닥 위에서 카메라를 올려다보는 수달 사진" />
+          </div>
+          <div class="profile-info">
+            <h1>서여(박성열)</h1>
+            <p class="tagline">매일 1%씩 성장하며, 배운 것을 기록으로 남기는 주니어 개발자입니다.</p>
+          </div>
+        </div>
       </section>
 
-      <!-- 기본 정보 -->
+      <section class="content-section" id="intro">
+        <h2>자기소개</h2>
+        <p>
+          안녕하세요. 백엔드와 사용자 경험을 꾸준히 공부하고 있는 서여(박성열)입니다.
+          작은 기능도 "왜 이렇게 동작해야 하는지"를 먼저 고민하고,
+          구조를 명확하게 만드는 것을 좋아합니다. 공부 기록은
+          <a href="https://github.com/yeo-li" target="_blank" rel="noreferrer">GitHub</a>와
+          <a href="https://blog.yeo-li.com/" target="_blank" rel="noreferrer">기술 블로그</a>에 정리하고 있습니다.
+        </p>
+      </section>
+
       <section class="content-section" id="info">
         <h2>기본 정보</h2>
-        <!-- TODO: 자신의 기본 정보를 표(<table>)로 정리하세요 -->
         <table class="info-table">
-          <tr>
-            <th>이름</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>MBTI</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>취미</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>좋아하는 음식</th>
-            <td></td>
-          </tr>
+          <tbody>
+            <tr>
+              <th scope="row">이름</th>
+              <td>서여(박성열)</td>
+            </tr>
+            <tr>
+              <th scope="row">MBTI</th>
+              <td>ENTP</td>
+            </tr>
+            <tr>
+              <th scope="row">취미</th>
+              <td>볼링, 노래방 가기</td>
+            </tr>
+            <tr>
+              <th scope="row">좋아하는 음식</th>
+              <td>소싯</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
-      <!-- 나만의 갤러리 -->
       <section class="content-section" id="gallery">
         <h2>나만의 갤러리</h2>
-        <p class="section-desc">갤러리 부제를 작성해주세요. (예: 기억에 남는 여행지)</p>
+        <p class="section-desc">최근에 먹은 음식들</p>
         <div class="gallery-grid">
-          <!-- TODO: 9장의 이미지를 배치하세요 -->
-          <!--
-          <img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" />
-          <img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" />
-          ...
-          -->
+          <img src="./images/gallery-food-1.jpg" alt="우테코에서 먹은 음식 사진 1" />
+          <img src="./images/gallery-food-2.jpg" alt="우테코에서 먹은 음식 사진 2" />
+          <img src="./images/gallery-food-3.jpg" alt="우테코에서 먹은 음식 사진 3" />
+          <img src="./images/gallery-food-4.jpg" alt="우테코에서 먹은 음식 사진 4" />
+          <img src="./images/gallery-food-5.jpg" alt="우테코에서 먹은 음식 사진 5" />
+          <img src="./images/gallery-food-6.jpg" alt="우테코에서 먹은 음식 사진 6" />
+          <img src="./images/gallery-food-7.jpg" alt="우테코에서 먹은 음식 사진 7" />
+          <img src="./images/gallery-food-8.jpg" alt="우테코에서 먹은 음식 사진 8" />
+          <img src="./images/gallery-food-9.jpg" alt="우테코에서 먹은 음식 사진 9" />
         </div>
       </section>
 
-      <!-- 나를 울린 인생 작품 -->
       <section class="content-section" id="works">
         <h2>나를 울린 인생 작품</h2>
-        <div class="works-list">
-          <!-- TODO: 최소 2가지 작품을 소개하세요 -->
-          <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
-          <article class="work-card">
-            <div class="work-thumbnail">
-              <!-- 작품 이미지 -->
-            </div>
-            <div class="work-info">
-              <h3>작품 제목</h3>
-              <p>작품에 대한 설명을 작성해주세요.</p>
-            </div>
-          </article>
-        </div>
+        <ol class="works-ranking">
+          <li class="work-list-item">
+            <article class="work-card">
+              <div class="work-thumbnail">
+                <img src="./images/work-interstellar.png" alt="설원 위 우주복 차림의 인터스텔라 포스터 이미지" />
+              </div>
+              <div class="work-info">
+                <h3>인터스텔라 (영화)</h3>
+                <p>
+                  시간과 가족, 선택의 무게를 다루는 방식이 인상 깊었습니다.
+                  어려운 상황에서도 포기하지 않는 태도를 배울 수 있었고,
+                  "지금의 선택이 미래를 만든다"는 메시지가 오래 남았습니다.
+                </p>
+                <iframe
+                  src="https://www.youtube.com/embed/zSWdZVtXT7E"
+                  title="인터스텔라 공식 트레일러"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </article>
+          </li>
+          <li class="work-list-item">
+            <article class="work-card">
+              <div class="work-thumbnail">
+                <img src="./images/work-aot.png" alt="진격의 거인 1권 표지 이미지" />
+              </div>
+              <div class="work-info">
+                <h3>진격의 거인 (애니메이션/만화)</h3>
+                <p>
+                  절망적인 상황에서도 끝까지 맞서는 인물들의 선택이 강하게 남은 작품입니다.
+                  자유와 책임, 진실을 마주하는 과정이 깊게 다가와서 여러 번 다시 보게 됐습니다.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ol>
       </section>
 
-      <!-- TIL (Today I Learned) -->
       <section class="content-section" id="til">
-        <h2>TIL</h2>
+        <h2>TIL (Today I Learned)</h2>
         <p class="section-desc">오늘 새롭게 배운 것들을 기록합니다.</p>
 
-        <!-- TIL 작성 폼 -->
         <form class="til-form" id="til-form">
           <div class="form-group">
             <label for="til-date">날짜</label>
@@ -128,21 +155,18 @@
           </div>
         </form>
 
-        <!-- TIL 목록: 폼으로 등록하면 여기에 항목이 추가됩니다 -->
         <div class="til-list" id="til-list">
-          <!-- 아래는 예시 항목입니다. 자유롭게 수정하거나 삭제하세요 -->
           <article class="til-item">
-            <time>2026-03-15</time>
-            <h3>HTML 시멘틱 태그</h3>
-            <p>header, nav, main, section, article, footer 등 시멘틱 태그의 역할과 사용법을 배웠다.</p>
+            <time datetime="2026-03-15">2026-03-15</time>
+            <h3>HTML 시멘틱 태그 구조화</h3>
+            <p>header, nav, main, section, article, footer를 목적에 맞게 나누면 문서 구조가 더 명확해진다.</p>
           </article>
         </div>
       </section>
-
     </main>
 
     <footer>
-      <p>&copy; My Page</p>
+      <p>&copy; 2026 Today I Learn. 꾸준히 배우고 기록합니다.</p>
     </footer>
   </body>
 </html>
